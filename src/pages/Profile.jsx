@@ -1,26 +1,30 @@
-import { useEffect, useState } from "react"
-import { useAuth } from "../utils/AuthContext"
-import ModalFormProfile from "../components/ModalFormProfile"
-import { updateUserProfile } from "../api/hooks/contact"
-import { toast } from "react-toastify"
+import { useEffect, useState } from "react";
+import { useAuth } from "../utils/AuthContext";
+import ModalFormProfile from "../components/ModalFormProfile";
+import { updateUserProfile } from "../api/hooks/contact";
+import { toast } from "react-toastify";
+import ChangePasswordForm from "./ChangePass";
+import { useNavigate } from "react-router-dom";
 
 export default function Example() {
-  const { user, setcheckDependency } = useAuth()
+  const navigate = useNavigate();
 
-  const [userInfo, setuserInfo] = useState()
+  const { user, setcheckDependency } = useAuth();
 
-  const [refreshUser, setrefreshUser] = useState()
-  const [editProfileModal, setEditProfileModal] = useState(false)
+  const [userInfo, setuserInfo] = useState();
+
+  const [refreshUser, setrefreshUser] = useState();
+  const [editProfileModal, setEditProfileModal] = useState(false);
 
   useEffect(() => {
-    setuserInfo(user)
-  }, [user])
+    setuserInfo(user);
+  }, [user]);
 
   function handleEditProfile(e) {
-    e.preventDefault()
-    setEditProfileModal(!editProfileModal)
-    updateUserProfile(userInfo)
-    setcheckDependency(Math.random())
+    e.preventDefault();
+    setEditProfileModal(!editProfileModal);
+    updateUserProfile(userInfo);
+    setcheckDependency(Math.random());
   }
 
   return (
@@ -44,6 +48,14 @@ export default function Example() {
           <p className="mt-1 max-w-2xl text-sm leading-6 text-gray-500">
             Personal details.
           </p>
+          <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+            <dt className="text-sm font-medium leading-6 text-gray-900">
+              Username
+            </dt>
+            <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
+              {user.username}
+            </dd>
+          </div>
           <p
             onClick={() => setEditProfileModal(!editProfileModal)}
             className="mt-6 max-w-2xl text-sm leading-6 text-gray-600 cursor-pointer hover:text-gray-700 hover:underline"
@@ -53,14 +65,6 @@ export default function Example() {
         </div>
         <div className=" border-t border-gray-100">
           <dl className="divide-y divide-gray-100">
-            <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-              <dt className="text-sm font-medium leading-6 text-gray-900">
-                Username
-              </dt>
-              <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
-                {user.username}
-              </dd>
-            </div>
             <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
               <dt className="text-sm font-medium leading-6 text-gray-900">
                 First name
@@ -86,9 +90,15 @@ export default function Example() {
                 {user.address}
               </dd>
             </div>
+            <p
+              onClick={() => navigate("/changepassword")}
+              className="mt-6 max-w-2xl text-sm leading-6 text-gray-600 cursor-pointer hover:text-gray-700 hover:underline"
+            >
+              Change password
+            </p>
           </dl>
         </div>
       </div>
     </>
-  )
+  );
 }
