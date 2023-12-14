@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 
 export default function FooterThreeColsSubFooter() {
   return (
@@ -17,39 +17,31 @@ export default function FooterThreeColsSubFooter() {
                   className="mb-6 text-base font-medium text-slate-700"
                   id="footer-product-3-sub"
                 >
-                  Product
+                  Features
                 </h3>
                 <ul>
                   <li className="mb-2 leading-6">
                     <a
-                      href="javascript:void(0)"
+                      href="/"
                       className="transition-colors duration-300 hover:text-emerald-500 focus:text-emerald-600"
                     >
-                      Features
+                      Homepage
                     </a>
                   </li>
                   <li className="mb-2 leading-6">
                     <a
-                      href="javascript:void(0)"
+                      href="/profile"
                       className="transition-colors duration-300 hover:text-emerald-500 focus:text-emerald-600"
                     >
-                      Customers
+                      Profile
                     </a>
                   </li>
                   <li className="mb-2 leading-6">
                     <a
-                      href="javascript:void(0)"
+                      href="/"
                       className="transition-colors duration-300 hover:text-emerald-500 focus:text-emerald-600"
                     >
-                      Why us?
-                    </a>
-                  </li>
-                  <li className="mb-2 leading-6">
-                    <a
-                      href="javascript:void(0)"
-                      className="transition-colors duration-300 hover:text-emerald-500 focus:text-emerald-600"
-                    >
-                      Pricing
+                      Search
                     </a>
                   </li>
                 </ul>
@@ -78,23 +70,7 @@ export default function FooterThreeColsSubFooter() {
                       href="javascript:void(0)"
                       className="transition-colors duration-300 hover:text-emerald-500 focus:text-emerald-600"
                     >
-                      Careers
-                    </a>
-                  </li>
-                  <li className="mb-2 leading-6">
-                    <a
-                      href="javascript:void(0)"
-                      className="transition-colors duration-300 hover:text-emerald-500 focus:text-emerald-600"
-                    >
-                      Leadership
-                    </a>
-                  </li>
-                  <li className="mb-2 leading-6">
-                    <a
-                      href="javascript:void(0)"
-                      className="transition-colors duration-300 hover:text-emerald-500 focus:text-emerald-600"
-                    >
-                      Blog
+                      Address
                     </a>
                   </li>
                   <li className="mb-2 leading-6">
@@ -140,14 +116,6 @@ export default function FooterThreeColsSubFooter() {
                       className="transition-colors duration-300 hover:text-emerald-500 focus:text-emerald-600"
                     >
                       Partners
-                    </a>
-                  </li>
-                  <li className="mb-2 leading-6">
-                    <a
-                      href="javascript:void(0)"
-                      className="transition-colors duration-300 hover:text-emerald-500 focus:text-emerald-600"
-                    >
-                      Join research
                     </a>
                   </li>
                 </ul>
@@ -214,5 +182,5 @@ export default function FooterThreeColsSubFooter() {
       </footer>
       {/*    <!-- End Footer with Three Columns and Sub Footer --> */}
     </>
-  )
+  );
 }
